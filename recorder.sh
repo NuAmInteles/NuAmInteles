@@ -34,8 +34,9 @@ do
   for ((i=1; i <= $retries; i++))
   do
  
-  FILENAME="${OUT_PATH}/${word}_${uuid}_${i}.wav"
-  
+  FILENAME="${OUT_PATH}/${word// /_}_${uuid}_${i}.wav"
+  # echo $FILENAME;
+
   echo -e "Cuvantul este '$word'. Apasa ENTER pentru a inregistra. "
   
   while : ; do
