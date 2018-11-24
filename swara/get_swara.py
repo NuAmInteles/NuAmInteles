@@ -27,7 +27,7 @@ for speaker in swara_speakers:
 
 
 for speaker in swara_speakers:
-    manifest = open(f"work/{speaker.lower()}-manifest.csv", "w")
+    manifest = open(f"work/{speaker.lower()}-manifest.csv", "w", encoding="utf-8")
 
     for root, dirs, files in os.walk(f"work/{speaker}/txt/"):
         for filename in files:
@@ -41,7 +41,7 @@ for speaker in swara_speakers:
                     transcript_path = f"output/text/{transcript_filename}"
                     wav_path = f"output/wav/{wav_filename}"
 
-                    with open(transcript_path, "w") as output:
+                    with open(transcript_path, "w", encoding="utf-8") as output:
                         output.write(" ".join(words[1:]).lower())
 
                     rnd = transcript_filename.split("_")[1]

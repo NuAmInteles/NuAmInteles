@@ -2,12 +2,12 @@ import random
 
 swara_speakers = ["BAS", "CAU", "DCS", "DDM", "EME", "FDS", "HTM", "IPS", "PCS", "PMM", "PSS", "RMS", "SAM", "SDS", "SGS", "TIM", "TSS"]
 
-train_csv = open("output/train.csv", "w")
-validate_csv = open("output/validate.csv", "w")
-test_csv = open("output/test.csv", "w")
+train_csv = open("output/train.csv", "w", encoding="utf-8")
+validate_csv = open("output/validate.csv", "w", encoding="utf-8")
+test_csv = open("output/test.csv", "w", encoding="utf-8")
 
 for speaker in swara_speakers:
-    with open(f"work/{speaker.lower()}-manifest.csv") as manifest:
+    with open(f"work/{speaker.lower()}-manifest.csv", encoding="utf-8") as manifest:
         lines = manifest.readlines()
 
         length = len(lines)
