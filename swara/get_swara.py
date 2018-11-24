@@ -20,7 +20,7 @@ for speaker in swara_speakers:
                 handle.write(block)
                 print(".", end="")
                 sys.stdout.flush()
-
+        print("\n")
         zip_file = ZipFile(f"download/{speaker}.zip")
         zip_file.extractall("work")
         zip_file.close()
@@ -31,7 +31,7 @@ for speaker in swara_speakers:
 
     for root, dirs, files in os.walk(f"work/{speaker}/txt/"):
         for filename in files:
-            with open(f"{root}/{filename}", "r") as handle:
+            with open(f"{root}/{filename}", "r", encoding="utf-8") as handle:
                 for line in handle:
                     words = line.replace(",", "").replace(".", "").replace("\n","").split(" ")
 
@@ -42,13 +42,15 @@ for speaker in swara_speakers:
                     wav_path = f"output/wav/{wav_filename}"
 
                     with open(transcript_path, "w") as output:
-                        output.write(" ".join(words[1:]))
+                        output.write(" ".join(words[1:]).lower())
 
                     rnd = transcript_filename.split("_")[1]
                     # shutil.copy(f"work/{speaker}/wav/{rnd}/{wav_filename}", wav_path)
-                    print(wav_filename)
-                    cmd = f"sox work/{speaker}/wav/{rnd}/{wav_filename} -r 16000 -b 16 -e signed-integer -c 1 {wav_path}"
-                    os.system(cmd)
+                    try:
+                        os.stat(wav_path)
+                    except FileNotFoundError:
+                        cmd = f"sox work/{speaker}/wav/{rnd}/{wav_filename} -r 16000 -b 16 -e signed-integer -c 1 {wav_path}"
+                        os.system(cmd)
 
                     manifest.write(os.path.realpath(wav_path) + "," + os.path.realpath(transcript_path) + "\n")
 
