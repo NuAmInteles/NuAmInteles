@@ -32,6 +32,8 @@ params = ArgParseHack({
     "rank": 0,
     "rnn_type": 'gru',
     "sample_rate": 16000,
+    "save_folder": 'models/',
+    "silent": False,
     "tensorboard": False,
     "train_manifest": 'data/train_manifest.csv',
     "val_manifest": 'data/val_manifest.csv',
