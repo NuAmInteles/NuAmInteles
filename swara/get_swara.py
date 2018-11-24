@@ -33,7 +33,7 @@ for speaker in swara_speakers:
         for filename in files:
             with open(f"{root}/{filename}", "r", encoding="utf-8") as handle:
                 for line in handle:
-                    words = line.strip().replace(",", "").replace(".", "").split(" ")
+                    words = line.strip().replace(",", "").replace(".", "").replace("-", "").split(" ")
 
                     transcript_filename = filename.replace('corr', words[0])
                     wav_filename = f"{transcript_filename.replace('txt', 'wav')}"
