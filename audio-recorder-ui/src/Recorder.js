@@ -32,22 +32,22 @@ export default class Recorder extends React.Component {
   onStop(recordedBlob) {
     console.log('recordedBlob is: ', recordedBlob);
 
-     saveAs(recordedBlob.blob, "test-aa.ogg");
+    // saveAs(recordedBlob.blob, "test-aa.ogg");
 
-    // var formData = new FormData();
+    var formData = new FormData();
+    var ts = Math.round((new Date()).getTime() / 1000);
 
-    // formData.append('file', recordedBlob.blob);
+    formData.append('recorded_file', recordedBlob.blob);
     
-    // fetch('http://127.0.0.1:5000/process', {
-    //   method: 'POST',
-    //   body: formData,
-    //   headers: {
-    //     "Content-Type": "multipart/form-data",
-    //   }
-    // })
-    // .then(response => response.json())
-    // .catch(error => console.error('Error:', error))
-    // .then(response => console.log('Success:', JSON.stringify(response)));
+    fetch('http://127.0.0.1:5000/process', {
+      method: 'POST',
+      body: formData,
+      headers: {
+      }
+    })
+    .then(response => response.json())
+    .catch(error => console.error('Error:', error))
+    .then(response => console.log('Success:', JSON.stringify(response)));
 
   }
 
