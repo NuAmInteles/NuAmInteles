@@ -6,7 +6,6 @@ import requests
 
 swara_speakers = ["BAS", "CAU", "DCS", "DDM", "EME", "FDS", "HTM", "IPS", "PCS", "PMM", "PSS", "RMS", "SAM", "SDS", "SGS", "TIM", "TSS"]
 
-
 for speaker in swara_speakers:
     try:
         os.stat(f"download/{speaker}.zip")
@@ -25,6 +24,7 @@ for speaker in swara_speakers:
         zip_file.extractall("work")
         zip_file.close()
 
+language_model = set()
 
 for speaker in swara_speakers:
     manifest = open(f"work/{speaker.lower()}-manifest.csv", "w", encoding="utf-8")
@@ -43,6 +43,8 @@ for speaker in swara_speakers:
 
                     with open(transcript_path, "w", encoding="utf-8") as output:
                         output.write(" ".join(words[1:]).lower())
+                    language_model.update(" ".join(words[1:]).lower())
+                    print(language_model)
 
                     rnd = transcript_filename.split("_")[1]
                     # shutil.copy(f"work/{speaker}/wav/{rnd}/{wav_filename}", wav_path)
@@ -56,4 +58,7 @@ for speaker in swara_speakers:
 
     manifest.close()
 
+with open("output/language_model.txt", "w", encoding="utf-8") as language_model_txt:
+    for line in language_model:
+        language_model_txt.write(line)
 
