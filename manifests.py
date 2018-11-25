@@ -17,7 +17,7 @@ for root, dirs, files in os.walk("assets/converted/"):
 
         language_model.update(phrase_fixed)
 
-        wav_file = os.path.realpath(file)
+        wav_file = os.path.realpath(f"assets/converted/{file}")
         phrase_file = os.path.realpath(f"assets/text/{'_'.join(phrase)}.txt")
 
         with open(phrase_file, "w") as w:
