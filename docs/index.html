@@ -118,12 +118,12 @@
 
 				<section data-markdown>
 					<textarea data-template>
-						## Soluțiile / tehnologii folosite
+						## Soluții / tehnologii
 						
 						* Deep Speech 2 model from Baidu - (implementare pytorch )
 						* nvidia-docker2 on a Geforce 1080Ti 11GB RAM pentru antrenare
 						* Set de date propriu - cules la hackathon
-						* React + python - web application
+						* React, python, bash - web application
 
 					</textarea>
 				</section>
@@ -150,6 +150,30 @@
 							* Proces simplu și ușor de reprodus pentru antrenare
 
 						</textarea>
+					</section>					
+				</section>
+				<section>
+					<section data-markdown>
+						<textarea data-template>
+							## Performanță model
+
+							#### Mărime date
+							* 1600 fișiere audio
+							* 10 cifre + 6 fraze simple
+						</textarea>
+					</section>
+					<section data-markdown>
+						<textarea data-template>
+							## Performanță model
+							
+							#### Pe lotul de validare
+							* Average Word Error Rate (WER): 2.68%
+							* Average Character Error Rate (CER): 1.54%
+		
+							####  Pe lotul de test
+							* Average Word Error Rate (WER): 7.33%
+							* Average Character Error Rate (CER): 5.26%
+						</textarea>
 					</section>
 				</section>
 
@@ -157,10 +181,10 @@
 					<textarea data-template>
 						## Mai departe
 						
-						Vrem să:
-						* Construim set de date LIBER pentru transcriere audio în Română (Mozilla Common Voice)
+						Vrem să:						
 						* Să construim un model generic bun pentru transcriere audio
 						* Să construim o comnitate și produse în jurul tehnologiei
+						* Folosirea unui language model (corectare texte)
 
 						<aside class="notes">
 							Avem nevoie de date de antrenament.
@@ -168,7 +192,22 @@
 						</aside>
 					</textarea>
 				</section>
-				
+
+				<section data-markdown>
+					<textarea data-template>
+						## Set de date LIBER
+						
+						* Avem nevoie de date pentru aplicații
+						* Vrem să contribuim la Mozilla Common Voice
+						* Eugen: Mi-am propus să promovez proiectul de culegere de date
+
+						<aside class="notes">
+							Avem nevoie de date de antrenament.
+							Mozilla Common Voice ar fi o soluție.
+						</aside>
+					</textarea>
+				</section>			
+
 				<section data-markdown>
 					<textarea data-template>
 						## Echipa
@@ -184,11 +223,11 @@
 						## Echipa
 						
 						* Adrian
-						* Andrei Nistor coder.tux@gmail.com
-						* Costin Lungu lunguconstantin@gmail.com
-						* Eugen Stan eu@ieugen.ro
-						* Florin Alexandrescu mihai.florin.alexandrescu@gmail.com												
-						* Ștefan Cârcimuaru carcstef95@gmail.com
+						* Andrei Nistor <a href="mailto:coder.tux@gmail.com">coder.tux@gmail.com</a>
+						* Costin Lungu <a href="mailto:lunguconstantin@gmail.com">lunguconstantin@gmail.com</a> 
+						* Eugen Stan <a href="mailto:eu@ieugen.ro">eu@ieugen.ro</a>
+						* Florin Alexandrescu <a href="mailto:mihai.florin.alexandrescu@gmail.com">mihai.florin.alexandrescu@gmail.com</a>
+						* Ștefan Cârcimuaru <a href="mailto:carcstef95@gmail.com">carcstef95@gmail.com</a>
 						
 					</textarea>
 				</section>
