@@ -3,7 +3,7 @@
 WORDS_FILE=${1:-words}
 uuid=$(uuidgen)
 retries=3
-OUT_PATH="files"
+OUT_PATH="assets/files"
 
 mkdir -p $OUT_PATH
 
