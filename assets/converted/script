@@ -1,0 +1,1 @@
+ffmpeg -i input.wav -ar 44100 output.wav
