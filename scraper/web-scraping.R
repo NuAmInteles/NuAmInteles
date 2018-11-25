@@ -47,11 +47,13 @@ webpage <- read_html(url)#,encoding = "windows-1250")
 proverbe_html <- html_nodes(webpage,'li')
 proverbe_1 <- html_text(proverbe_html)
 
-proverbe_vec <- c(proverbe_vec,proverbe_1)
 
 
 #writing to files 
-saveRDS(proverbe_vec, file = "proverbe_vec.Rds")
-write.csv(proverbe_vec, file = "proverbe_vec.csv")
+saveRDS(proverbe_vec, file = "proverbe.citatepedia.ro.Rds") 
+write.csv(proverbe_vec, file = "proverbe.citatepedia.ro.csv")
+
+saveRDS(proverbe_vec, file = "wikiquote.org.Rds")
+write.csv(proverbe_vec, file = "wikiquote.org.csv")
 
 
