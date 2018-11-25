@@ -4,13 +4,43 @@
 		<meta charset="utf-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+		<title>Nu am Înțeles : 2nHack 2018</title>
 
 		<link rel="stylesheet" href="css/reveal.css">
 		<link rel="stylesheet" href="css/theme/black.css">
 
 		<!-- Theme used for syntax highlighting of code -->
 		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<style type="text/css">
+			/* 1. Style header/footer <div> so they are positioned as desired. */
+			#header-left {
+				position: absolute;
+				top: 0%;
+				left: 0%;				
+			}
+			#header-left img {
+				padding-left: 3%;
+				padding-top: 3%;
+				width: 20%;
+			}
+			#header-right {
+				position: absolute;
+				top: 0%;
+				right: 0%;
+			}
+
+			#header-right {				
+				padding-top: 3%;
+				padding-right: 3%;
+				font-size: .5em;
+			}
+			#footer-left {
+				position: absolute;
+				bottom: 0%;
+				left: 0%;
+			}
+		</style>
 
 		<!-- Printing and PDF exports -->
 		<script>
@@ -23,14 +53,184 @@
 	</head>
 	<body>
 		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
+			<div class="slides">				
+				<section data-markdown>
+					<textarea data-template>
+						## Nu am Înțeles !
+						
+						#### Transcriere audio (*) pentru limba română
+						_(*) Adică Speech-to-Text pentru limba Română :)_
+
+					</textarea>
+				</section>
+
+				<section>
+					<section data-markdown>
+						<textarea data-template>
+							## Transcrierea audio 
+							
+							Este procesul de transformare a vorbirii în text --
+							cu ajutorul inteligenței artificiale. 
+
+						</textarea>
+					</section>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+						## Aplicații ale transcrierii audio
+						
+						* Transcriere de emisiuni radio / tv / podcast pentru indexare / SEO
+						* Comenzi vocale
+							- automatizare casă și dispozitive
+							- cumpărături online vocale
+							- ajutor pentru persoanele cu dizabilități
+						* Robot (telefonic) pentru interacțiune cu oameni (clienți)
+						<aside class="notes">
+							Transcrierea discursurilor parlamentare pentru a îi responzabiliza.
+						</aside>											
+					</textarea>
+				</section>
+
+				<section>
+					<section data-markdown>
+						<textarea data-template>
+							## Situația existentă
+
+							* Nu am găsit modele antrenate, pentru limba română (*)
+							* Am găsit seturi de date mici / insuficiente pentru antrenament
+							* Calitatea slabă a datelor găsite
+
+						</textarea>
+					</section>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+						## Obiectivele proiectului
+
+						* Să facem un motor de transcriere audio funcțional pentru limba română						
+						* Să pornim procesul de culegere de date la Mozilla Common Voice
+						* Să avem un proces reproductibil (documentație, imagini docker)
+
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+						## Soluțiile / tehnologii folosite
+						
+						* Deep Speech 2 model from Baidu - (implementare pytorch )
+						* nvidia-docker2 on a Geforce 1080Ti 11GB RAM pentru antrenare
+						* Set de date propriu - cules la hackathon
+						* React + python - web application
+
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+						## Provocări întâmpinate
+						
+						* Lipsa datelor de antrenare penru limba română
+						* Timpi mari de antrenare ( Feedb-back încet )
+						* Hardware specializat pentru antrenare
+						* Lucru cu echipă nouă
+					</textarea>
+				</section>
+
+				<section>
+					<section data-markdown>
+						<textarea data-template>
+							## Livrabile
+							
+							* Model de transcriere pt. Română antrenat pentru vocabular redus
+							* 5400+ texte pentru Common Voice - putem începe procesul online !!
+							* Aplicație pentru procesul culegere de date audio
+							* Proces simplu și ușor de reprodus pentru antrenare
+
+						</textarea>
+					</section>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+						## Mai departe
+						
+						Vrem să:
+						* Construim set de date LIBER pentru transcriere audio în Română (Mozilla Common Voice)
+						* Să construim un model generic bun pentru transcriere audio
+						* Să construim o comnitate și produse în jurul tehnologiei
+
+						<aside class="notes">
+							Avem nevoie de date de antrenament.
+							Mozilla Common Voice ar fi o soluție.
+						</aside>
+					</textarea>
+				</section>
+				
+				<section data-markdown>
+					<textarea data-template>
+						## Echipa
+
+						Codul, prezentarea și resursele:
+
+						https://github.com/cnstlungu/nuaminteles						
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+						## Echipa
+						
+						* Adrian
+						* Andrei Nistor coder.tux@gmail.com
+						* Costin Lungu lunguconstantin@gmail.com
+						* Eugen Stan eu@ieugen.ro
+						* Florin Alexandrescu mihai.florin.alexandrescu@gmail.com												
+						* Ștefan Cârcimuaru carcstef95@gmail.com
+						
+					</textarea>
+				</section>
+
+				<section data-markdown>
+					<textarea data-template>
+						## Q & A							
+
+						Întrebări ?!
+
+					</textarea>
+				</section>
+
+			</div>
+		</div>
+
+		<div id="hidden" style="display:none;">
+			<div id="header">
+				<div id="header-left">
+					<img src="images/logo-text.png" alt="Codette.ro">
+				</div>
+				<div id="header-right">2NHack 2018</div>
+				<!--div id="footer-left">FOOTER-LEFT</div-->
 			</div>
 		</div>
 
 		<script src="lib/js/head.min.js"></script>
 		<script src="js/reveal.js"></script>
+		
+		<script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+		<script type="text/javascript">
+			// 3. On Reveal.js ready event, copy header/footer <div> into each `.slide-background` <div>
+			var header = $('#header').html();
+			if ( window.location.search.match( /print-pdf/gi ) ) {
+				Reveal.addEventListener( 'ready', function( event ) {
+					$('.slide-background').append(header);
+				});
+			}
+			else {
+				$('div.reveal').append(header);
+		   }
+		</script>
 
 		<script>
 			// More info about config & dependencies:
